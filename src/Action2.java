@@ -16,7 +16,7 @@ public class Action2 {
         lock.lock();
 
         try {
-            //未防止虚假唤醒,涉及多线程横向通知回访调用的判断只能用while
+            //为防止虚假唤醒,涉及多线程横向通知回访调用的判断只能用while
             while (num > 0) {
                 condition.await();
             }
@@ -34,7 +34,7 @@ public class Action2 {
 
         lock.lock();
         try {
-            //未防止虚假唤醒,涉及多线程横向通知回访调用的判断只能用while
+            //为防止虚假唤醒,涉及多线程横向通知回访调用的判断只能用while
             while (num == 0) {
                 condition.await();
             }

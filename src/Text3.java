@@ -12,9 +12,9 @@ public class Text3 {
     public static void main(String[] args) {
 
         /**
-         * 5个人同时售票这30张票
+         * 两个售票窗口各分配30张票35个人同时购买这30张票
          */
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 35; i++) {
             executorService.execute(() -> {
 
                 for (int j = 0; j < 30; j++) {

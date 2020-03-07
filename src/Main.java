@@ -11,5 +11,9 @@ public class Main {
                     }
                 }
         ).start();
+
+        new Thread(
+                () -> new Text1()
+        ).start();
     }
 }

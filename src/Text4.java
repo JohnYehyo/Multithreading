@@ -35,7 +35,7 @@ public class Text4 {
             }
         });
 
-        executor.execute(()->{
+        executor.execute(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
                     action.reduce();
@@ -44,7 +44,7 @@ public class Text4 {
                 }
             }
         });
-        executor.execute(()->{
+        executor.execute(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
                     action.reduce();
