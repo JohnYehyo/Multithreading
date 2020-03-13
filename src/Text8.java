@@ -19,7 +19,7 @@ public class Text8 {
 //            return "123";
 //        });
         //比起上面的方法 如果执行的Callable比较常用建议封装起来
-        Future<Double> future = executorService.submit(new Action4());
+        Future<String> future = executorService.submit(new Action4());
         System.out.println(future.get());
 
         Action4 action4 = new Action4();
@@ -31,15 +31,15 @@ public class Text8 {
         list.add(new Action4());
         list.add(new Action4());
 
-        List<Future<Double>> futures = executorService.invokeAll(list, 5, TimeUnit.SECONDS);
-        for (Future<Double> f : futures) {
+        List<Future<String>> futures = executorService.invokeAll(list, 5, TimeUnit.SECONDS);
+        for (Future<String> f : futures) {
             System.out.println(f.get());
         }
 
-        FutureTask<Double> futureTask = new FutureTask(action4);
+        FutureTask<String> futureTask = new FutureTask(action4);
         new Thread(futureTask).start();
         try {
-            Double d = futureTask.get(5, TimeUnit.SECONDS);
+            String d = futureTask.get(5, TimeUnit.SECONDS);
             System.out.println(d);
         } catch (TimeoutException e) {
             e.printStackTrace();
